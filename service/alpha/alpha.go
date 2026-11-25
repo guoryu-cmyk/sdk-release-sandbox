@@ -1,4 +1,4 @@
 package alpha
 
-// Hello is a placeholder API used only to exercise the release pipeline.
+// Hello returns the alpha service name for release integration smoke tests.
 func Hello() string { return "alpha" }

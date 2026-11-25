@@ -2,6 +2,8 @@
 
 用于联调 SDK 发布控制台、Codebase CI 和 GitHub Actions 的 Go SDK 测试工程。外发目标固定为 `guoryu-cmyk/sdk-release-sandbox`。
 
+The sandbox also supports a manual release smoke test to verify the complete release workflow.
+
 | Codebase 流水线 | 职责 |
 | --- | --- |
 | `update_version_and_changelog` | 从平台固定的 `master` SHA 生成版本号和 Changelog。测试和构建通过后推送 `version_*`。控制台根据返回的分支 SHA 创建版本 MR。 |
