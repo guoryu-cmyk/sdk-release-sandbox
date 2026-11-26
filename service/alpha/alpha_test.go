@@ -7,3 +7,17 @@ func TestHello(t *testing.T) {
 		t.Fatalf("Hello() = %q, want alpha", got)
 	}
 }
+
+func TestResourceName(t *testing.T) {
+	for _, tc := range []struct {
+		name string
+		want string
+	}{
+		{name: "", want: "alpha"},
+		{name: "demo", want: "alpha/demo"},
+	} {
+		if got := ResourceName(tc.name); got != tc.want {
+			t.Errorf("ResourceName(%q) = %q, want %q", tc.name, got, tc.want)
+		}
+	}
+}
