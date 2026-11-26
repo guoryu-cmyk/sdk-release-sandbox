@@ -1,4 +1,4 @@
 package beta
 
-// Hello is a placeholder API used only to exercise the release pipeline.
+// Hello returns the fixed beta service name used by SDK release smoke tests.
 func Hello() string { return "beta" }

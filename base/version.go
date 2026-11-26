@@ -2,4 +2,4 @@ package base
 
 const SDKName = "sdk-release-sandbox"
 
-const SDKVersion = "v1.0.4"
+const SDKVersion = "v1.0.5"

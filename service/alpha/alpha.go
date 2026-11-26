@@ -1,4 +1,4 @@
 package alpha
 
-// Hello returns the alpha service name for release integration smoke tests.
+// Hello returns the fixed alpha service name used by SDK release smoke tests.
 func Hello() string { return "alpha" }
