@@ -21,3 +21,17 @@ func TestGreeting(t *testing.T) {
 		}
 	}
 }
+
+func TestResourceName(t *testing.T) {
+	for _, tc := range []struct {
+		name string
+		want string
+	}{
+		{name: "", want: "beta"},
+		{name: "demo", want: "beta/demo"},
+	} {
+		if got := ResourceName(tc.name); got != tc.want {
+			t.Errorf("ResourceName(%q) = %q, want %q", tc.name, got, tc.want)
+		}
+	}
+}

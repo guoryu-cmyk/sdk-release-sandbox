@@ -10,3 +10,11 @@ func Greeting(name string) string {
 	}
 	return "hello, " + name
 }
+
+// ResourceName returns a service-qualified resource name.
+func ResourceName(name string) string {
+	if name == "" {
+		return Hello()
+	}
+	return Hello() + "/" + name
+}
