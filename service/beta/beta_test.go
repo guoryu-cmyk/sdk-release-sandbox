@@ -33,6 +33,7 @@ func TestResourceName(t *testing.T) {
         {name: "hw", want: "beta/hw"},
         {name: "hw1", want: "beta/hw1"},  
         {name: "hw2", want: "beta/hw2"},  
+        {name: "hw3", want: "beta/hw3"},
 	} {
 		if got := ResourceName(tc.name); got != tc.want {
 			t.Errorf("ResourceName(%q) = %q, want %q", tc.name, got, tc.want)
