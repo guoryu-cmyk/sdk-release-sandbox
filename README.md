@@ -18,7 +18,7 @@ The sandbox also supports a manual release smoke test to verify the complete rel
 | 流水线 | 独立运行时填写 |
 | --- | --- |
 | `update_version_and_changelog` | 全部可选：`bump`（默认 patch，也可填 minor / major）、`base_sha`（默认当前 master）、`baseline_sha`（自动探测不适用时）、`release_date`（默认北京时间当天）。验证通过后推送版本分支并自动创建或复用指向 master 的版本 MR，日志 `Standalone result` 包含 MR 编号和链接，人工审核合入即可。 |
-| `sync_master_to_mainrelease` | `merged_sha` 可留空：自动定位 master 第一父链上引入当前 SDK 版本的更新提交，不纳入其后合入的业务 MR。不能确认版本更新提交时须显式填写 SHA。记录日志输出的 `release_sha`。 |
+| `sync_master_to_mainrelease` | `merged_sha` 可留空：自动定位 master 第一父链上的版本 MR 合入提交，核对版本文件后从第一条 CI 固定的版本分支提交 `source_sha` 构建；版本准备后新增的业务 MR（无论在版本 MR 合入前还是合入后进入 master）均不纳入本轮发布。无法核验版本 MR 或原始版本提交时停止。日志输出 `merged_sha`、`source_sha` 和 `release_sha`。 |
 | `publish_mainrelease_to_github` | `release_sha` 可留空：默认取当前 mainrelease 头部；显式填写时须仍为该头部。从该提交读取版本和 tag。 |
 
 GitHub 发布任务在两种模式下都需要 `GH_PUSH_TOKEN`。重试时使用相同参数；跨日期重试版本准备时显式填写原来的 `release_date`。
